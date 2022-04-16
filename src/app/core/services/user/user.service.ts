@@ -13,6 +13,6 @@ export class UserService {
 
   register(email: string, password: string, role:number): Observable<string> {
     return this.http
-      .post<string>(environment.laravel_api + '/login', {email, password, role})
-  }
+      .post<string>(environment.laravel_api + '/register', {email, password,role})
+    }
 }
