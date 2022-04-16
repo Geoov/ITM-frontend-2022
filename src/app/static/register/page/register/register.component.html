@@ -12,48 +12,38 @@
             <p>The most basic card needs only an element with some content. However, Angular Material provides a number of preset sections that you can use inside of an </p>
         </mat-card-subtitle>
         <form class="example-form">
-            <mat-form-field class="example-full-width" appearance="fill">
-              <mat-label>Company (disabled)</mat-label>
-              <input matInput disabled value="Google">
-            </mat-form-field>
-          
+            <div class="row-option">
+                <mat-radio-group class="example-full-width " aria-label="Select an option">
+                    <div class="column">
+                        <div class="col-auto mr-sm-2 mx-5 card-block py-1 text-center radio selected ">
+                                <div class="col">
+                                    <div class="pic my-2"> <img class="irc_mut img-fluid" src="https://www.freeiconspng.com/uploads/duck-png-10.png" width="300" height="300"> </div>
+                                    <mat-radio-button value="1"> Duckling
+                                    </mat-radio-button>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="col-auto ml-sm-2 mx-5 card-block py-1 text-center radio ">
+                                <div class="col">
+                                    <div class="pic my-2"> <img class="irc_mut img-fluid" src="https://us.123rf.com/450wm/krugli/krugli1703/krugli170300105/75161116-red-horse-barn-vector-illustration-wooden-stables-building-with-opened-doors-and-haystack-old-horse-.jpg?ver=6" width="300" height="300"> </div>
+                                    <mat-radio-button value="2"> Paddock
+                                    </mat-radio-button>
+                                </div>
+                        </div>
+                    </div>
+                </mat-radio-group>
+            </div>
             <table class="example-full-width" cellspacing="0"><tr>
               <td><mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>First name</mat-label>
-                <input matInput>
+                <mat-label>Email</mat-label>
+                <input type="email" matInput>
               </mat-form-field></td>
               <td><mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Long Last Name That Will Be Truncated</mat-label>
-                <input matInput>
+                <mat-label>Password</mat-label>
+                <input type="password" matInput>
               </mat-form-field></td>
-            </tr></table>
-          
-            <p>
-              <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Address</mat-label>
-                <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
-              </mat-form-field>
-              <mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Address 2</mat-label>
-                <textarea matInput></textarea>
-              </mat-form-field>
-            </p>
-          
-            <table class="example-full-width" cellspacing="0"><tr>
-              <td><mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>City</mat-label>
-                <input matInput placeholder="Ex. San Francisco">
-              </mat-form-field></td>
-              <td><mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>State</mat-label>
-                <input matInput placeholder="Ex. California">
-              </mat-form-field></td>
-              <td><mat-form-field class="example-full-width" appearance="fill">
-                <mat-label>Postal Code</mat-label>
-                <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
-                <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-              </mat-form-field></td>
-            </tr></table>
+              </tr></table>
           </form>
         </mat-card>
     </div>
