@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "AvertaDemo";
+  src: url("src/assets/fonts/AvertaDemo-Regular.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Eina-SB';
+  src: url("src/assets/fonts/Eina01-SemiBold.ttf") format("truetype");
+}

@@ -1,1 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+// @import './src/assets/styles/_mixins.scss';
+//@import './_variables.scss'; // contains custom palette
+//@import './app_theme.scss'; // contains app mixin
+
+$app-typography: mat-typography-config(
+  //$font-family: 'AvertaDemo, Roboto, "Helvetica Neue", sans-serif',
+  $font-family: 'Eina-SB, sans-serif',
+  $display-4: mat-typography-level(112px, 112px, 300),
+  $display-3: mat-typography-level(56px, 56px, 400),
+  $display-2: mat-typography-level(45px, 48px, 400),
+  $display-1: mat-typography-level(34px, 40px, 400),
+  $headline: mat-typography-level(24px, 32px, 400),
+  $title: mat-typography-level(20px, 32px, 500),
+  $subheading-2: mat-typography-level(16px, 28px, 400),
+  $subheading-1: mat-typography-level(15px, 24px, 400),
+  $body-2: mat-typography-level(14px, 24px, 500),
+  $body-1: mat-typography-level(14px, 20px, 400),
+  $caption: mat-typography-level(12px, 20px, 400),
+  $button: mat-typography-level(14px, 14px, 500),
+  $input: mat-typography-level(16px, 1.25, 400)
+);
+
+@include mat-core($app-typography);
+
+
+body, html {
+  margin: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  font-size: mat-font-size($app-typography, body-1);
+  font-family: mat-font-family($app-typography);
+  line-height: mat-line-height($app-typography, body-1);
+}
+
+app-root {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+}
+
+.mat-purple {
+    background-color: #6937ff;
+    color: #fff;
+}
+
+.mat-deep-purple {
+    background-color: #221e41;
+    color: #fff;
+}
+
+.mat-lightblue {
+    background-color: #00adff;
+    color: #fff;
+} 
+  
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
