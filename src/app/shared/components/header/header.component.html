@@ -26,5 +26,32 @@
         </ul>
       </div>
     </div>
-  </nav>
-  
+    <div id="navbar-right" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-left navbar">
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">HOW IT WORKS</a></li>
+        <li><a href="#">FREQUENT QUESTIONS</a></li>
+        <li *ngIf="this.role ===1">
+          <a routerLink="/apply-now" routerLinkActive="active">APPLY NOW</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <div *ngIf="this.isLoggedIn; then logout; else login"></div>
+
+          <ng-template #login>
+            <button mat-raised-button color="primary" (click)="goToLogin()">
+              Log in
+            </button>
+          </ng-template>
+
+          <ng-template #logout>
+            <button mat-raised-button color="primary" (click)="goToLogout()">
+              Log out
+            </button>
+          </ng-template>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
