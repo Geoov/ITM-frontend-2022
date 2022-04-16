@@ -7,6 +7,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatIconModule } from '@angular/material/icon';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 
 @NgModule({
@@ -17,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
         MatCardModule,
         MatIconModule,
         MatFormFieldModule,
+        MatRadioModule,
     ],
     exports: [
         HeaderComponent,
@@ -25,6 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
         MatIconModule,
         MatCardModule,
         MatFormFieldModule,
+        MatRadioModule
     ],
     declarations: [
         HeaderComponent,
