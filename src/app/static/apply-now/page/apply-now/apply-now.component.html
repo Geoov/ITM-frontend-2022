@@ -1,0 +1,48 @@
+<div id="boxed-container">
+  <header id="header" class="header">
+    <app-header></app-header>
+  </header>
+
+  <div class="section-wrapper">
+    <div class="apply-now-wrapper">
+      <div class="change-job-button-wrapper">
+        <button
+          mat-fab
+          color="lightblue"
+          aria-label="Go Previous"
+          class="change-job-button go-prev-button"
+          (click)="seePrevJob()"
+        >
+          <mat-icon>expand_less</mat-icon>
+        </button>
+      </div>
+
+      <ng-template
+        ngFor
+        let-job
+        [ngForOf]="this.jobs"
+        let-i="index"
+      >
+        <div class="app-job-card-wrapper" [ngClass]="callbackFunction(i)">
+            <app-job-card [currentJob]="job"></app-job-card>
+        </div>
+      </ng-template>
+
+      <div class="change-job-button-wrapper">
+        <button
+          mat-fab
+          color="orange"
+          aria-label="Go Next"
+          class="change-job-button go-next-button"
+          (click)="seeNextJob()"
+        >
+          <mat-icon>expand_more</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-wrapper">
+    <app-footer></app-footer>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+@import '~src/assets/styles/_mixins.scss';
+
+:host {
+  @include full-column-direction;
+  @include full-width-height;
+}
+
+.mat-card {
+  @include column-direction;
+  @include full-width-height;
+  justify-content: space-between;
+  align-items: center;
+  flex: 1;
+  padding:  30px 45px;
+
+
+  .right-bar {
+    @include column-direction;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-basis: 10%;
+  }
+}

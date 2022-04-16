@@ -1,0 +1,154 @@
+<mat-card>
+  <div class="d-flex flex-row justify-content-between align-items-center w-100">
+    <div class="d-flex flex-row align-items-center">
+      <h1 class="mb-0 mx-2">
+        {{
+          this.currentJob.description
+            ? this.currentJob.description
+            : "Placeholder Job Name"
+        }}
+      </h1>
+    </div>
+
+    <div class="d-flex flex-row">
+      <h3 class="mb-0 ml-1 d-flex flex-row align-items-center">
+        <ng-template [ngIf]="this.currentJob.payment_level">
+          <h4 class="mb-0 mx-2">Wanted Level:</h4>
+
+          <span
+            *ngFor="
+              let item of [].constructor(this.currentJob.payment_level);
+              let i = index
+            "
+          >
+            $
+          </span>
+          <span class="mx-1"></span>
+          (
+          <container-element [ngSwitch]="this.currentJob.payment_level">
+            <div *ngSwitchCase="1">
+              <div class="d-flex flex-row align-items-center">
+                <h4 class="mb-0">Rubber Duck</h4>
+                <img
+                  src="assets/images/duck-rubber.svg"
+                  [width]="30"
+                  [height]="30"
+                />
+              </div>
+            </div>
+            <div *ngSwitchCase="2">
+              <div class="d-flex flex-row align-items-center">
+                <h4 class="mb-0">Thug Duck</h4>
+                <img
+                  src="assets/images/duck-thug.svg"
+                  [width]="30"
+                  [height]="30"
+                  style="margin-bottom: 5px"
+                />
+              </div>
+            </div>
+            <div *ngSwitchCase="3">
+              <div class="d-flex flex-row align-items-center">
+                <h4 class="mb-0">Duck Vader</h4>
+                <img
+                  src="assets/images/duck-vader.svg"
+                  [width]="30"
+                  [height]="30"
+                />
+              </div>
+            </div>
+          </container-element>
+          )
+        </ng-template>
+      </h3>
+    </div>
+  </div>
+
+  <main
+    class="d-flex flex-row justify-content-between align-items-center w-100"
+  >
+    <article>
+      <div class="d-flex flex-column">
+        <div class="d-flex flex-row align-items-center">
+          <img
+            src="assets/images/company-placeholder.png"
+            [width]="60"
+            [height]="60"
+          />
+          <div class="mx-2 d-flex flex-row align-items-center">
+            <h2 class="mb-0 mt-1">
+              {{
+                this.currentCompany.company_name
+                  ? this.currentCompany.company_name
+                  : "Placeholder Company Name"
+              }}
+            </h2>
+            <div class="mx-2">
+                <span
+                  *ngFor="
+                    let item of [].constructor(this.currentCompany.rating);
+                    let i = index
+                  "
+                >
+                  <img src="assets/images/stars.png" [width]="20" [height]="20" />
+                </span>
+              </div>
+          </div>
+        </div>
+        <h3 class="mt-4 mb-2">
+          {{
+            this.currentCompany.descriere
+              ? this.currentCompany.descriere
+              : "Placeholder Description"
+          }}
+        </h3>
+        <h4>
+          {{
+            this.currentCompany.nr_angajati
+              ? "No employes: " + this.currentCompany.nr_angajati
+              : ""
+          }}
+        </h4>
+      </div>
+    </article>
+    <aside class="right-bar">
+      <button
+        mat-mini-fab
+        color="warn"
+        aria-label="icon button with a heart icon"
+      >
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button
+        mat-mini-fab
+        color="accent"
+        aria-label="icon button with a plus one icon"
+        class="my-3"
+      >
+        <mat-icon>plus_one</mat-icon>
+      </button>
+      <button
+        mat-mini-fab
+        color="primary"
+        aria-label="icon button with down icon"
+      >
+        <mat-icon>thumb_down</mat-icon>
+      </button>
+    </aside>
+  </main>
+
+  <div class="d-flex flex-row justify-content-between align-items-center w-100">
+    <div class="d-flex flex-column">
+      <div class="d-flex">{{
+        this.currentJob.requested_skills
+          ? "Required Skills: " + this.currentJob.requested_skills
+          : ""
+      }}</div>
+      <div class="d-flex">{{
+        this.currentJob.optional_skills
+          ? "Optional Skills: " + this.currentJob.optional_skills
+          : ""
+      }}</div>
+    </div>
+  </div>
+</mat-card>
