@@ -25,6 +25,11 @@ export class AuthService {
             .pipe(tap((res) => AuthService.setSession(res)));
     }
 
+    register(email: string, password: string, role: number): Observable<string> {
+        return this.http
+            .post<string>(environment.laravel_api + '/register', { email, password, role })
+    }
+
     decode(): Observable<string> {
         return this.http.post<string>(environment.laravel_api + '/decode', {});
     }
