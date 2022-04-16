@@ -15,6 +15,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
 import { DashboardComponent } from './dashboard/page/dashboard/dashboard.component';
+import { CompanyDetailsComponent } from './dashboard/components/company-details/company-details.component';
+import { UserDetailsComponent } from './dashboard/components/user-details/user-details.component';
 
 @NgModule({
   imports: [
@@ -36,7 +38,9 @@ import { DashboardComponent } from './dashboard/page/dashboard/dashboard.compone
     ApplyNowComponent,
     JobCardComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    CompanyDetailsComponent,
+    UserDetailsComponent
 ]
 })
 

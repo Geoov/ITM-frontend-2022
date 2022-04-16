@@ -1,18 +1,18 @@
-import {HttpClient} from '@angular/common/http';
-import {Injectable} from '@angular/core';
-import {tap} from 'rxjs/operators';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import {Observable} from 'rxjs';
+import { Observable } from 'rxjs';
+import { UserDetails } from '../../models/user-details';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private http: HttpClient) {}
+    constructor(private httpClient: HttpClient) { }
 
-  register(email: string, password: string, role:number): Observable<string> {
-    return this.http
-      .post<string>(environment.laravel_api + '/register', {email, password,role})
+    getUserById(userId: number): Observable<UserDetails> {
+        return this.httpClient.get<UserDetails>(`${environment.laravel_api}/usersdetails/${userId}`);
     }
 }

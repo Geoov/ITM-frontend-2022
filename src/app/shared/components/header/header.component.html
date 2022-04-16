@@ -1,30 +1,15 @@
 <nav id="nav-header" class="navbar">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="http://localhost:4200">
-            <img src="../../../../assets/images/logo.png" alt="DuckLinks" width="60px" height="60px"/>
-          <p class="m-0">DuckLinks</p>
-        </a>
-      </div>
-      <div id="navbar-right" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-left navbar">
-          <li><a href="#">ABOUT</a></li>
-          <li><a href="#">HOW IT WORKS</a></li>
-          <li><a href="#">FREQUENT QUESTIONS</a></li>
-          <li>ost basic card needs only an element with some content. However, Angular Material provides a number of preset sections that you can use inside of an 
-            <a routerLink="/apply-now" routerLinkActive="active">APPLY NOW</a>
-          </li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-              <button mat-raised-button color="primary" (click)="goToLogin()">Log in</button>
-  
-            <ng-template #logout>
-              <button mat-raised-button color="primary">Log out</button>
-            </ng-template>
-          </li>
-        </ul>
-      </div>
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="http://localhost:4200">
+        <img
+          src="../../../../assets/images/logo.png"
+          alt="DuckLinks"
+          width="60px"
+          height="60px"
+        />
+        <p class="m-0">DuckLinks</p>
+      </a>
     </div>
     <div id="navbar-right" class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-left navbar">
@@ -34,14 +19,19 @@
         <li *ngIf="this.isLoggedIn">
             <a routerLink="/dashboard" routerLinkActive="active">DASHBOARD</a>
           </li>
-        <li *ngIf="this.role ===1">
+        <li *ngIf="this.role===1">
           <a routerLink="/apply-now" routerLinkActive="active">APPLY NOW</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <div *ngIf="this.isLoggedIn; then logout; else login"></div>
+          <ng-template [ngIf]="!this.isLoggedIn">
+            <button mat-raised-button color="orange" class="mx-4" (click)="goToRegister()">
+              Register
+            </button>
+          </ng-template>
 
+          <div *ngIf="this.isLoggedIn; then logout; else login"></div>
           <ng-template #login>
             <button mat-raised-button color="primary" (click)="goToLogin()">
               Log in
@@ -56,4 +46,5 @@
         </li>
       </ul>
     </div>
+  </div>
 </nav>
