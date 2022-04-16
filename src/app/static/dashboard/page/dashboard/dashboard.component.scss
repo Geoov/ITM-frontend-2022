@@ -1,0 +1,256 @@
+@import "~src/assets/styles/_mixins.scss";
+
+:host {
+  @include full-column-direction;
+  height: 100%;
+}
+
+#boxed-container {
+  @include full-column-direction;
+  height: 100%;
+}
+
+.section-wrapper {
+  @include full-column-direction;
+  align-items: center;
+  margin-top: 80px;
+  position: relative;
+  z-index: 1;
+  padding: 120px 0;
+  height: 1000px;
+
+  &:before {
+    background-color: var(--purple);
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 0;
+    max-width: calc(100% - 40px);
+    left: initial;
+    right: 0;
+    box-shadow: none;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: -1;
+  }
+
+  .diploma-wrapper {
+    //background-color: lighten(#F2ECFF, 1);
+    //border: 1px solid var(--deeppurple);
+    @include column-direction;
+    //flex: 1;
+
+    //width: 60%;
+    //border-radius: 30px;
+    //padding: 40px;
+    //box-shadow: inset 0px 0px 15px -3px #000000;
+    margin-left: 40px;
+    width: 60%;
+
+    .diploma-section {
+      @include full-column-direction;
+      flex: 1;
+      border-radius: 30px;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 15px -3px var(--deeppurple);
+
+      form {
+        @include full-column-direction;
+        padding: 20px 10px;
+
+        .series-wrapper {
+          @include row-direction;
+          padding: 5px;
+          margin-top: 25px;
+          margin-left: 50px;
+
+          .series-div {
+            @include row-direction;
+
+            mat-form-field ::ng-deep .mat-form-field-flex {
+              padding-left: 10px;
+            }
+
+            .series {
+              mat-form-field.series-form {
+                &::ng-deep .mat-form-field-flex {
+                  width: 120px;
+                }
+              }
+            }
+
+            .series-separator {
+              @include column-direction;
+              justify-content: center;
+              align-items: center;
+              margin-top: 12px;
+              padding: 0 5px 0 10px;
+              font-size: 1.5rem;
+              font-family: AvertaDemo;
+            }
+          }
+        }
+
+        .title-wrapper {
+          @include row-direction;
+          margin-top: 75px;
+          justify-content: center;
+
+          h1 {
+            font-size: 42px;
+            margin: 0;
+          }
+        }
+
+        .name-wrapper {
+          @include row-direction;
+          margin: 75px 50px 15px 50px;
+          justify-content: flex-start;
+
+          h2 {
+            font-size: 22px;
+            margin: 0;
+          }
+
+          p {
+            font-size: 28px;
+            font-family: AvertaDemo;
+            padding: 0.15rem 2rem 0 2rem;
+            margin: 0;
+          }
+        }
+
+        .studyProgram-wrapper,
+        .domain-wrapper {
+          @include row-direction;
+          margin: 15px 50px;
+          justify-content: space-between;
+
+          h3 {
+            font-size: 18px;
+            margin: 0;
+          }
+
+          .domain-wrapper {
+            margin-top: 10px;
+          }
+        }
+
+        mat-divider {
+          background-color: var(--purple);
+          margin: 25px 50px 5px 50px;
+        }
+
+        .note-wrapper {
+          @include row-direction;
+          margin: 30px 50px;
+
+          .note-div {
+            @include row-direction;
+            flex: 1;
+            justify-content: space-between;
+
+            mat-form-field ::ng-deep .mat-form-field-flex {
+              padding-left: 10px;
+              width: 240px;
+            }
+          }
+        }
+
+        .date-diploma-wrapper {
+          @include row-direction;
+          margin: 50px;
+
+          .date-diploma-div {
+            @include row-direction;
+
+            mat-form-field ::ng-deep .mat-form-field-flex {
+              padding-left: 10px;
+            }
+
+            .date-diploma-separator {
+              @include column-direction;
+              justify-content: center;
+              align-items: center;
+              margin-top: 12px;
+              padding: 0 5px 0 10px;
+              font-size: 1.5rem;
+              font-family: AvertaDemo;
+              color: var(--lightgrey);
+            }
+          }
+        }
+
+        .submit-btn-wrapper {
+          @include row-direction;
+          flex: 1;
+          justify-content: flex-end;
+          margin: 0 50px 25px 40px;
+
+          button.mat-raised-button {
+            background-color: var(--purple);
+            font-size: 18px;
+            line-height: 18px;
+            padding: 15px 30px;
+            letter-spacing: 0.4px;
+            border-radius: 2px;
+            color: #fff;
+            border: none;
+
+            &:hover {
+              background-color: var(--purple);
+            }
+          }
+        }
+
+        .process-wrapper {
+          @include column-direction;
+          flex: 1;
+          justify-content: flex-end;
+          align-items: flex-end;
+          margin: 0 50px 25px 40px;
+
+          p {
+            margin-top: 5px;
+            font-size: 18px;
+            padding-right: 25px;
+            color: var(--deeppurple);
+
+            .txn {
+              font-size: 16px;
+              color: var(--purple);
+            }
+          }
+
+          a {
+            color: var(--purple);
+            text-decoration: none;
+          }
+
+          .loading:after {
+            overflow: hidden;
+            display: inline-block;
+            vertical-align: bottom;
+            -webkit-animation: ellipsis steps(4, end) 1700ms infinite;
+            animation: ellipsis steps(4, end) 1700ms infinite;
+            content: "\2026"; /* ascii code for the ellipsis character */
+            width: 0px;
+          }
+
+          @keyframes ellipsis {
+            to {
+              width: 20px;
+            }
+          }
+
+          @-webkit-keyframes ellipsis {
+            to {
+              width: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
