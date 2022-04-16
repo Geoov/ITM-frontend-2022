@@ -11,22 +11,24 @@ import { RegisterComponent } from './register/page/register/register.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 
+
 @NgModule({
-    imports: [
-      CommonModule,
-      SharedModule,
-      MatInputModule,
-      MatSelectModule
-    ],
-    declarations: [
-        HomeComponent,
-        HeaderPresentationComponent,
-        PartnersComponent,
-        AdvantagesComponent,
-        ApplyNowComponent,
-        JobCardComponent,
-        RegisterComponent,    
-  ]
+  imports: [
+    CommonModule,
+    SharedModule,
+    MatInputModule,
+    MatSelectModule
+],
+  declarations: [
+    HomeComponent,
+    HeaderPresentationComponent,
+    PartnersComponent,
+    AdvantagesComponent,
+    RegisterComponent,
+    ApplyNowComponent,
+    JobCardComponent
+]
 })
+
 export class StaticModule {
 }
