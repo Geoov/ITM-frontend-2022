@@ -14,6 +14,7 @@ import { LoginComponent } from './login/page/login/login.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {ReactiveFormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
+import { DashboardComponent } from './dashboard/page/dashboard/dashboard.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,8 @@ import {RouterModule} from '@angular/router';
     RegisterComponent,
     ApplyNowComponent,
     JobCardComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
 ]
 })
 

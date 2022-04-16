@@ -16,6 +16,9 @@
         <li><a href="#">ABOUT</a></li>
         <li><a href="#">HOW IT WORKS</a></li>
         <li><a href="#">FREQUENT QUESTIONS</a></li>
+        <li *ngIf="this.isLoggedIn">
+            <a routerLink="/dashboard" routerLinkActive="active">DASHBOARD</a>
+          </li>
         <li *ngIf="this.role ===1">
           <a routerLink="/apply-now" routerLinkActive="active">APPLY NOW</a>
         </li>
