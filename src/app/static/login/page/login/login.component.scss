@@ -1,0 +1,136 @@
+@import '~src/assets/styles/_mixins.scss';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+section.login-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+//   background-image: url("/assets/images/bg-01.jpg");
+  width: 100%;
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  .container {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    mat-card {
+      width: 500px;
+      height: 700px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #fff;
+      border-radius: 10px;
+      padding: 65px 55px 54px 55px;
+
+      a.navigate-back {
+        color: var(--lightgrey);
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-start;
+        align-items: center;
+        text-decoration: none;
+        margin-right: auto;
+
+        &:hover {
+          cursor: pointer;
+        }
+
+        .grey-icon {
+          color: var(--lightgrey);
+          border: 1px solid var(--lightgrey);
+          padding: 2px;
+          border-radius: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      p {
+        margin-top: 2px;
+        margin-bottom: 0;
+        color: var(--lightgrey);
+        font-size: 16px;
+        padding-left: 10px;
+      }
+
+      h1 {
+        font-size: 36px;
+        color: var(--deeppurple);
+        margin-top: 100px;
+      }
+
+      form {
+        min-height: 380px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      mat-form-field {
+        line-height: 24px;
+        width: 100%;
+        margin-top: 8px;
+      }
+
+      button.mat-primary {
+        background-color: var(--lightblue);
+        text-transform: initial;
+        text-align: center;
+        font-size: 18px;
+        line-height: 18px;
+        padding: 12px 8px;
+        letter-spacing: 0.4px;
+        border-radius: 10px;
+        box-shadow: none;
+        color: #fff;
+        border: none;
+        width: 120px;
+        z-index: 6;
+        margin-top: 50px;
+
+        &:hover {
+          background: rgba(0,173,255,0.7);
+          color: #fff;
+        }
+      }
+
+      .mat-raised-button.mat-button-disabled {
+        cursor: default;
+        background: var(--lightgrey);
+
+        &:hover {
+          background: var(--lightgrey);
+        }
+      }
+
+    }
+  }
+}
+
+::ng-deep .custom-snackbar {
+  background-color: var(--deeppurple);
+  color: white;
+}

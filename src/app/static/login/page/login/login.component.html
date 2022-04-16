@@ -1,0 +1,67 @@
+<section class="login-section">
+  <div class="container">
+    <mat-card class="mat-elevation-z24">
+      <a class="navigate-back" routerLink="/home">
+        <div class="d-flex flex-row align-items-center">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="navigate back arrow"
+            class="grey-icon"
+            >chevron_left</mat-icon
+          >
+          <p>Home</p>
+        </div>
+      </a>
+
+      <h1>Log In</h1>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="legacy">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            formControlName="email"
+            matInput
+            placeholder="email@domain.com"
+          />
+          <mat-error
+            *ngIf="
+              loginForm.get('email')?.hasError('email') &&
+              !loginForm.get('email')?.hasError('required')
+            "
+          >
+            Please insert an <strong>valid</strong> email address.
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            Email address is <strong>mandatory.</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="legacy">
+          <mat-label>Password</mat-label>
+          <input
+            type="password"
+            formControlName="password"
+            matInput
+            placeholder="********"
+          />
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+            Password is <strong>mandatory.</strong>
+          </mat-error>
+          <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
+            Password has to contain at least <strong>8 characters.</strong>
+          </mat-error>
+        </mat-form-field>
+
+        <div class="d-flex flex-row justify-content-end">
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="!loginForm.valid"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </mat-card>
+  </div>
+</section>

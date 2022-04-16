@@ -10,14 +10,21 @@ import { JobCardComponent } from './apply-now/components/job-card/job-card.compo
 import { RegisterComponent } from './register/page/register/register.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-
+import { LoginComponent } from './login/page/login/login.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {ReactiveFormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
     CommonModule,
     SharedModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    RouterModule
 ],
   declarations: [
     HomeComponent,
@@ -26,7 +33,8 @@ import { MatInputModule } from '@angular/material/input';
     AdvantagesComponent,
     RegisterComponent,
     ApplyNowComponent,
-    JobCardComponent
+    JobCardComponent,
+    LoginComponent
 ]
 })
 
