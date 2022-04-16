@@ -5,6 +5,8 @@
 
   <div class="section-wrapper">
     <div class="apply-now-wrapper">
+      <mat-card class="faded-card faded-card-top"></mat-card>
+
       <div class="change-job-button-wrapper">
         <button
           mat-fab
@@ -17,14 +19,9 @@
         </button>
       </div>
 
-      <ng-template
-        ngFor
-        let-job
-        [ngForOf]="this.jobs"
-        let-i="index"
-      >
+      <ng-template ngFor let-job [ngForOf]="this.jobs" let-i="index">
         <div class="app-job-card-wrapper" [ngClass]="callbackFunction(i)">
-            <app-job-card [currentJob]="job"></app-job-card>
+          <app-job-card [currentJob]="job"></app-job-card>
         </div>
       </ng-template>
 
@@ -39,6 +36,11 @@
           <mat-icon>expand_more</mat-icon>
         </button>
       </div>
+
+      <mat-card
+        class="faded-card faded-card-bottom"
+        [@dimBox]="changeState ? '' : ''"
+      ></mat-card>
     </div>
   </div>
 

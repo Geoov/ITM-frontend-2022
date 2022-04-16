@@ -3,16 +3,44 @@ import { Router } from '@angular/router';
 import { CompanyDetails } from 'src/app/core/models/company-details';
 import { Jobs } from 'src/app/core/models/jobs';
 import { JobService } from 'src/app/core/services/job/job.service';
+import { trigger, transition, state, animate, style } from '@angular/animations';
 
 @Component({
     selector: 'app-apply-now',
     templateUrl: './apply-now.component.html',
-    styleUrls: ['./apply-now.component.scss']
+    styleUrls: ['./apply-now.component.scss'],
+    animations: [
+        trigger('dimBox', [
+            state('notDimmed',
+                style({ opacity: 0.5 })
+            ),
+            state('dimmed',
+                style({ transform: 'translateY(100%)', opacity: 0.8 })
+            ),
+
+            transition('notDimmed => dimmed', [
+                animate('0.5s')
+            ]),
+            transition('dimmed => notDimmed', [
+                animate('1s')
+            ])
+        ]),
+        trigger('finishDimBox', [
+            state('finished-dimmed',
+                style({ transform: 'translateY(-100%)', opacity: 0.8 })
+            ),
+            state('notDimmed',
+                style({ opacity: 0.5 })
+            ),
+        ])
+    ]
 })
 export class ApplyNowComponent implements OnInit {
 
     jobs: Jobs[] = [];
     currentJob = 0;
+    changeState = false;
+    finishedDimmed = false;
 
     constructor(private router: Router,
         private jobService: JobService) { }
@@ -42,29 +70,35 @@ export class ApplyNowComponent implements OnInit {
             }
         }
 
-        console.log(this.jobs.length);
     }
 
     callbackFunction(indexJob: number): string {
-        console.log(indexJob);
         return indexJob != this.currentJob ? 'd-none' : '';
     }
 
     seePrevJob(): void {
-        if (this.currentJob - 1 >= 0) {
-            this.currentJob--;
-        } else {
-            this.currentJob = this.jobs.length-1;
-        }
+        this.changeState = !this.changeState;
+
+        setTimeout(() => {
+            if (this.currentJob - 1 >= 0) {
+                this.currentJob--;
+            } else {
+                this.currentJob = this.jobs.length - 1;
+            }
+        }, 1500);
+        this.finishedDimmed = true;
     }
 
     seeNextJob(): void {
-        if (this.currentJob + 1 < this.jobs.length) {
-            this.currentJob++;
-        } else {
-            this.currentJob = 0;
-        }
-    }
+        this.changeState = !this.changeState;
 
+        setTimeout(() => {
+            if (this.currentJob + 1 < this.jobs.length) {
+                this.currentJob++;
+            } else {
+                this.currentJob = 0;
+            }
+        }, 1500);
+    }
 
 }

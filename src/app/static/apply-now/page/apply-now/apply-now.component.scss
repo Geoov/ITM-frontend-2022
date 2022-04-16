@@ -39,6 +39,25 @@
     width: 90%;
     height: 100%;
     padding-top: 60px;
+    position: relative;
+    z-index: 1;
+
+    .faded-card {
+        position: absolute;
+        width: 700px;
+        height: 200px;
+        z-index: -1;
+        opacity: 0.5;
+    }
+
+    .faded-card-top {
+        top: 2.3px;
+    }
+
+    .faded-card-bottom{
+        bottom: -6.5%;
+    }
+
 
     .app-job-card-wrapper {
       @include column-direction;

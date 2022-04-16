@@ -37,9 +37,7 @@ export class JobCardComponent implements OnInit {
             }
             this.currentCompany = tempCompany;
         }
-        // console.log('currentCompany', this.currentCompany)
     }
-
 
 
 }
