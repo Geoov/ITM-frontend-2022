@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class RegisterComponent implements OnInit {
-  Roles: any = ['Duckling', 'Company'];
+  constructor(private router: Router) { }
+  
 
-  constructor() { }
-  ngOnInit() {
-  }
+  registerForm = new FormGroup({
+    email: new FormControl('', [
+        Validators.required,
+        Validators.email,
+    ]),
+    password: new FormControl('', [
+        Validators.required,
+        Validators.minLength(4)
+    ]),
+    role: new FormControl('', [
+      Validators.required
+  ])
+});
+ngOnInit(): void {
+}
+
+onSubmit(): void {
+    const { email, password, role } = this.registerForm.value;
+    console.log(this.registerForm.value);
+}
 }
