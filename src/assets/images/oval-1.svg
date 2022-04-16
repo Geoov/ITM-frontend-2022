@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="290px" height="288px" viewBox="0 0 290 288" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<linearGradient x1="17.3193551%" y1="-11.4530693%" x2="157.524397%" y2="120.281048%" id="linearGradient-1">
+<stop stop-color="#E5FBFF" offset="0%"></stop>
+<stop stop-color="#B6EBF4" offset="100%"></stop>
+</linearGradient>
+<path d="M1134.71265,285 C1162.55124,285 1181.66581,262.614237 1177.40623,235 C1173.14665,207.385763 1147.12594,185 1119.28735,185 C1091.44876,185 1072.33419,207.385763 1076.59377,235 C1080.85335,262.614237 1106.87406,285 1134.71265,285 Z" id="path-2"></path>
+<filter x="-191.2%" y="-115.0%" width="462.7%" height="470.0%" filterUnits="objectBoundingBox" id="filter-3">
+<feOffset dx="-10" dy="70" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+<feGaussianBlur stdDeviation="50" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+<feColorMatrix values="0 0 0 0 0.495773018   0 0 0 0 0.770014089   0 0 0 0 0.818638393  0 0 0 1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+</filter>
+<filter x="-121.1%" y="-43.5%" width="322.5%" height="327.0%" filterUnits="objectBoundingBox" id="filter-4">
+<feGaussianBlur stdDeviation="6.5" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+<feOffset dx="2" dy="-14" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+<feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+<feColorMatrix values="0 0 0 0 0.724997714   0 0 0 0 0.923488177   0 0 0 0 0.964684311  0 0 0 1 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+</filter>
+</defs>
+<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+<g id="New_Sebostudio_Homepage_Final2" transform="translate(-1362.000000, -1489.000000)">
+<g id="Group-3" transform="translate(389.000000, 1328.000000)">
+<g id="Phonewagon" transform="translate(1.000000, 0.000000)">
+<g id="Oval-1">
+<use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-2"></use>
+<use fill="url(#linearGradient-1)" fill-rule="evenodd" xlink:href="#path-2"></use>
+<use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-2"></use>
+</g>
+</g>
+</g>
+</g>
+</g>
+</svg>

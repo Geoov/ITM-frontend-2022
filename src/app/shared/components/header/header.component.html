@@ -1,0 +1,30 @@
+<nav id="nav-header" class="navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="http://localhost:4200">
+            <img src="../../../../assets/images/logo.png" alt="DuckLinks" width="60px" height="60px"/>
+          <p class="m-0">DuckLinks</p>
+        </a>
+      </div>
+      <div id="navbar-right" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left navbar">
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="#">HOW IT WORKS</a></li>
+          <li><a href="#">FREQUENT QUESTIONS</a></li>
+          <li>
+            <a routerLink="/find-job" routerLinkActive="active">APPLY NOW</a>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+              <button mat-raised-button color="primary">Log in</button>
+  
+            <ng-template #logout>
+              <button mat-raised-button color="primary">Log out</button>
+            </ng-template>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
