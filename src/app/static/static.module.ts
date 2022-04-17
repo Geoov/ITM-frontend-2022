@@ -11,13 +11,14 @@ import { RegisterComponent } from './register/page/register/register.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { LoginComponent } from './login/page/login/login.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {ReactiveFormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/page/dashboard/dashboard.component';
 import { CompanyDetailsComponent } from './dashboard/components/company-details/company-details.component';
 import { UserDetailsComponent } from './dashboard/components/user-details/user-details.component';
 import { JobPostComponent } from './job-post/job-post.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { JobPostComponent } from './job-post/job-post.component';
     MatFormFieldModule,
     MatInputModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    MatDividerModule
 ],
   declarations: [
     HomeComponent,
@@ -42,8 +44,9 @@ import { JobPostComponent } from './job-post/job-post.component';
     DashboardComponent,
     CompanyDetailsComponent,
     UserDetailsComponent,
-    JobPostComponent
+    JobPostComponent,
 ]
+
 })
 
 export class StaticModule {

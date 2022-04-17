@@ -23,7 +23,8 @@ export class UserDetailsComponent implements OnInit {
        last_job: new FormControl(),
        end_date: new FormControl(),
        start_date: new FormControl(),
-       skiils: new FormControl()
+       skills: new FormControl(),
+       description: new FormControl()
     });
     
     constructor(

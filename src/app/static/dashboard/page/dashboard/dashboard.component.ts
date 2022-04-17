@@ -24,6 +24,7 @@ export class DashboardComponent implements OnInit {
                 this.role = data.role;
                 this.email = data.email;
                 this.idUser = data.id_user;
+                console.log(this);
             })
          
           } else {
