@@ -1,57 +1,87 @@
 <form [formGroup]="userDetailsForm" (ngSubmit)="onSubmit()">
+  <div class="user-row">
     <mat-form-field appearance="legacy">
-        <mat-label>Name</mat-label>
+      <mat-label>First Name</mat-label>
+      <input type="text" formControlName="prenume" matInput placeholder="Doe" />
     </mat-form-field>
+    <div class="divider px-3"></div>
+    <mat-form-field appearance="legacy">
+      <mat-label>Last Name</mat-label>
+      <input type="text" formControlName="nume" matInput placeholder="John" />
+    </mat-form-field>
+  </div>
+
+  <mat-form-field appearance="legacy">
+    <mat-label>Age</mat-label>
+    <input type="number" formControlName="varsta" matInput placeholder="18" />
+  </mat-form-field>
+
+  <mat-form-field appearance="legacy">
+    <mat-label>No. Phone</mat-label>
     <input
-    type="text"
-    formControlName="nume"
-    matInput
-    placeholder="John">
+      type="text"
+      formControlName="nr_tel"
+      matInput
+      placeholder="+40771771017"
+    />
+  </mat-form-field>
 
-    <mat-form-field appearance="legacy">
-      <mat-label>Email</mat-label>
-      <input
-        type="email"
-        formControlName="email"
-        matInput
-        placeholder="email@domain.com"
-      />
-      <mat-error
-        *ngIf="
-        userDetailsForm.get('email')?.hasError('email') &&
-          !userDetailsForm.get('email')?.hasError('required')
-        "
-      >
-        Please insert an <strong>valid</strong> email address.
-      </mat-error>
-      <mat-error *ngIf="userDetailsForm.get('email')?.hasError('required')">
-        Email address is <strong>mandatory.</strong>
-      </mat-error>
-    </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <mat-label>Current Studies</mat-label>
+    <input
+      type="text"
+      formControlName="studii_curente"
+      matInput
+      placeholder="********"
+    />
+  </mat-form-field>
 
-    <mat-form-field appearance="legacy">
-      <mat-label>Password</mat-label>
-      <input
-        type="password"
-        formControlName="password"
-        matInput
-        placeholder="********"
-      />
-      <mat-error *ngIf="userDetailsForm.get('password')?.hasError('required')">
-        Password is <strong>mandatory.</strong>
-      </mat-error>
-      <mat-error *ngIf="userDetailsForm.get('password')?.hasError('minlength')">
-        Password has to contain at least <strong>8 characters.</strong>
-      </mat-error>
-    </mat-form-field>
+  <mat-form-field appearance="legacy">
+    <mat-label>Year</mat-label>
+    <input type="number" formControlName="an" matInput placeholder="1" />
+  </mat-form-field>
 
-    <div class="d-flex flex-row justify-content-end">
-      <button
-        mat-raised-button
-        color="primary"
-        [disabled]="!userDetailsForm.valid"
-      >
-        Submit
-      </button>
-    </div>
-  </form>
+  <mat-form-field appearance="legacy">
+    <mat-label>Last Job (If had one)</mat-label>
+    <input
+      type="text"
+      formControlName="last_job"
+      matInput
+      placeholder="Intern at Google"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="legacy">
+    <mat-label>End Date</mat-label>
+    <input
+      type="date"
+      formControlName="end_date"
+      matInput
+      placeholder="yyyy-mm-dd"
+    />
+  </mat-form-field>
+
+  <mat-form-field appearance="legacy">
+    <mat-label>Start Date</mat-label>
+    <input
+      type="date"
+      formControlName="start_date"
+      matInput
+      placeholder="yyyy-mm-dd"
+    />
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Skills</mat-label>
+    <input
+      type="date"
+      formControlName="start_date"
+      matInput
+      placeholder="yyyy-mm-dd"
+    />
+  </mat-form-field>
+
+  <div class="d-flex flex-row justify-content-end">
+    <button mat-raised-button color="primary">Submit</button>
+  </div>
+</form>
