@@ -26,6 +26,8 @@ export class UserDetailsComponent implements OnInit {
        skills: new FormControl(),
        description: new FormControl()
     });
+
+    emptyObject: boolean = false;
     
     constructor(
         private route: Router,
@@ -41,12 +43,24 @@ export class UserDetailsComponent implements OnInit {
                 this.user = user;
                 console.log(this.user);
             })
+
+            if(!Object.keys(this.userService).length) {
+                this.emptyObject = true;
+            }
+        } else {
+            this.emptyObject = true;
         }
 
     }
 
     onSubmit(): void {
+        console.log(this.userDetailsForm);
 
+        if(this.emptyObject) {
+            // create
+        } else {
+            // update
+        }
     }
 
 }
