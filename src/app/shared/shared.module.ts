@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MatIconModule } from '@angular/material/icon';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 
@@ -20,6 +21,7 @@ import {MatRadioModule} from '@angular/material/radio';
         MatIconModule,
         MatFormFieldModule,
         MatRadioModule,
+        MatStepperModule
     ],
     exports: [
         HeaderComponent,
@@ -28,7 +30,8 @@ import {MatRadioModule} from '@angular/material/radio';
         MatIconModule,
         MatCardModule,
         MatFormFieldModule,
-        MatRadioModule
+        MatRadioModule,
+        MatStepperModule
     ],
     declarations: [
         HeaderComponent,

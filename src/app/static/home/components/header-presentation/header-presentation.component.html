@@ -5,15 +5,34 @@
           DuckLinks
         </h1>
         <p>Your career it's just at <span class="bold-title">ONE </span>click away</p>
-        <button class="btn btn-primary" routerLink="/register">
+        <ng-template [ngIf]="!this.isLoggedIn">
+         <button class="btn btn-primary" routerLink="/register">
           Register Now
           <img src="assets/images/chevron_right.svg" alt="chevron right arrow">
         </button>
+        </ng-template>
+
+        <ng-template [ngIf]="this.isLoggedIn && this.getRole() ===1 ">
+          <button class="btn btn-primary" routerLink="/apply-now">
+            Apply Now
+            <img src="assets/images/chevron_right.svg" alt="chevron right arrow">
+          </button>
+        <p style="padding-top: 70px;">Our internship programs vary and offer many different on-campus and off-campus paid opportunities across many different disciplines.</p>
+          <p>ELEVATE your skils now colaborating with top employers around the world.</p>
+        </ng-template>
+        <ng-template [ngIf]="this.isLoggedIn && this.getRole() ===2 ">
+          <button class="btn btn-primary" routerLink="/dashboard">
+            Start recruiting people today
+            <img src="assets/images/chevron_right.svg" alt="chevron right arrow">
+          </button>
+        <p style="padding-top: 70px;">Even if you have substantial experience in the HR field, the latest reports will make your decision-making data-driven and result in a business that has higher odds of success. 
+          Once you gather the information you need for a well-informed decision, it’s time to determine which type of recruitment agency you want to establish.</p>
+        </ng-template>
       </div>
   
       <div class="header-image">
         <img id="presentation-image" src="assets/images/presentation.png">
       </div>
     </div>
-  </div>
+</div>
   

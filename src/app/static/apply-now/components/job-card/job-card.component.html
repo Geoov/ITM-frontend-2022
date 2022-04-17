@@ -1,15 +1,34 @@
 <mat-card>
   <div class="d-flex flex-row justify-content-between align-items-center w-100">
-    <div class="d-flex flex-row align-items-center">
-      <h1 class="mb-0 mx-2">
-        {{
-          this.currentJob.description
-            ? this.currentJob.description
-            : "Placeholder Job Name"
-        }}
-      </h1>
-    </div>
 
+    <div class="mx-2 d-flex flex-row align-items-center">
+      <img
+      src="assets/images/company-placeholder.png"
+      [width]="60"
+      [height]="60"
+    />
+      <h2 class="mx-3 mb-0 mt-1">
+        {{
+          this.currentCompany.company_name
+            ? this.currentCompany.company_name
+            : "Placeholder Company Name"
+        }}
+      </h2>
+      <div class="mx-2">
+          <span
+            *ngFor="
+              let item of [].constructor(this.currentCompany.rating);
+              let i = index
+            "
+          >
+          <img class="px-1"
+          src="assets/images/duck.svg"
+          [width]="30"
+          [height]="30"
+        />
+          </span>
+        </div>
+    </div>
     <div class="d-flex flex-row">
       <h3 class="mb-0 ml-1 d-flex flex-row align-items-center">
         <ng-template [ngIf]="this.currentJob.payment_level">
@@ -21,7 +40,7 @@
               let i = index
             "
           >
-            $
+          <mat-icon>attach_money</mat-icon>
           </span>
           <span class="mx-1"></span>
           (
@@ -69,31 +88,16 @@
   >
     <article>
       <div class="d-flex flex-column">
-        <div class="d-flex flex-row align-items-center">
-          <img
-            src="assets/images/company-placeholder.png"
-            [width]="60"
-            [height]="60"
-          />
-          <div class="mx-2 d-flex flex-row align-items-center">
-            <h2 class="mb-0 mt-1">
+          <div class="d-flex flex-row align-items-center">
+            <h1 class="mb-0 mx-2">
               {{
-                this.currentCompany.company_name
-                  ? this.currentCompany.company_name
-                  : "Placeholder Company Name"
+                this.currentJob.description
+                  ? this.currentJob.description
+                  : "Placeholder Job Name"
               }}
-            </h2>
-            <div class="mx-2">
-                <span
-                  *ngFor="
-                    let item of [].constructor(this.currentCompany.rating);
-                    let i = index
-                  "
-                >
-                  <img src="assets/images/stars.png" [width]="20" [height]="20" />
-                </span>
-              </div>
+            </h1>
           </div>
+
         </div>
         <h3 class="mt-4 mb-2">
           {{
@@ -109,7 +113,6 @@
               : ""
           }}
         </h4>
-      </div>
     </article>
     <aside class="right-bar">
       <button

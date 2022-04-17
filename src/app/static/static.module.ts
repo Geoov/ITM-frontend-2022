@@ -17,33 +17,36 @@ import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/page/dashboard/dashboard.component';
 import { CompanyDetailsComponent } from './dashboard/components/company-details/company-details.component';
 import { UserDetailsComponent } from './dashboard/components/user-details/user-details.component';
+import { JobPostComponent } from './job-post/job-post.component';
 import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
-    imports: [
-        CommonModule,
-        SharedModule,
-        MatInputModule,
-        MatSelectModule,
-        MatFormFieldModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        RouterModule,
-        MatDividerModule
-    ],
-    declarations: [
-        HomeComponent,
-        HeaderPresentationComponent,
-        PartnersComponent,
-        AdvantagesComponent,
-        RegisterComponent,
-        ApplyNowComponent,
-        JobCardComponent,
-        LoginComponent,
-        DashboardComponent,
-        CompanyDetailsComponent,
-        UserDetailsComponent
-    ]
+  imports: [
+    CommonModule,
+    SharedModule,
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    RouterModule,
+    MatDividerModule
+],
+  declarations: [
+    HomeComponent,
+    HeaderPresentationComponent,
+    PartnersComponent,
+    AdvantagesComponent,
+    RegisterComponent,
+    ApplyNowComponent,
+    JobCardComponent,
+    LoginComponent,
+    DashboardComponent,
+    CompanyDetailsComponent,
+    UserDetailsComponent,
+    JobPostComponent,
+]
+
 })
 
 export class StaticModule {

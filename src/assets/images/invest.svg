@@ -131,47 +131,11 @@
 </g>
 <g>
 <g transform="translate(59.567 175.865)">
-<use fill="#000" filter="url(#j)" xlink:href="#k"/>
-<use fill="#FFF" xlink:href="#k"/>
 </g>
-<text fill="#6B87A4" font-family="Lato-Medium, Lato" font-size="14.44" font-weight="400" letter-spacing="-.16" transform="translate(59.567 175.865)">
-<tspan x="41.515" y="29.342">New Trial MMR</tspan>
-</text>
-<text fill="#303F4D" font-family="Lato-Bold, Lato" font-size="21.66" font-weight="bold" letter-spacing="-.241" transform="translate(59.567 175.865)">
-<tspan x="41.515" y="58.905">$21.4K</tspan>
-</text>
-<text fill="#3BDC9C" font-family="Lato-Bold, Lato" font-size="13.537" font-weight="bold" letter-spacing="-.15" transform="translate(244.58 205.647)">
-<tspan x="26.172" y="13">+19%</tspan>
-</text>
-<text fill="#6B87A4" font-family="Lato-Medium, Lato" font-size="10.83" font-weight="400" letter-spacing="-.12" transform="translate(244.58 205.647)">
-<tspan x="0" y="31.757">Last 30 Days</tspan>
-</text>
-<g transform="translate(73.105 192.11)">
-<circle cx="7.22" cy="7.22" r="7.22" fill="url(#l)"/>
-<path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.805" d="M4.512 7.272l2.31 2.475 3.466-4.332"/>
-</g>
+
 </g>
 <g>
-<g transform="translate(194.04 75.687)">
-<use fill="#000" filter="url(#m)" xlink:href="#n"/>
-<use fill="#FFF" xlink:href="#n"/>
-</g>
-<text fill="#6B87A4" font-family="Lato-Medium, Lato" font-size="14.44" font-weight="400" letter-spacing="-.16" transform="translate(194.04 75.687)">
-<tspan x="41.515" y="29.342">Trial Conversion Rate</tspan>
-</text>
-<text fill="#303F4D" font-family="Lato-Bold, Lato" font-size="21.66" font-weight="bold" letter-spacing="-.241" transform="translate(194.04 75.687)">
-<tspan x="41.515" y="58.905">248</tspan>
-</text>
-<text fill="#3BDC9C" font-family="Lato-Bold, Lato" font-size="13.537" font-weight="bold" letter-spacing="-.15" transform="translate(379.052 105.47)">
-<tspan x="26.172" y="13">+19%</tspan>
-</text>
-<text fill="#6B87A4" font-family="Lato-Medium, Lato" font-size="10.83" font-weight="400" letter-spacing="-.12" transform="translate(379.052 105.47)">
-<tspan x="0" y="31.757">Last 30 Days</tspan>
-</text>
-<g transform="translate(207.577 91.932)">
-<circle cx="7.22" cy="7.22" r="7.22" fill="url(#o)"/>
-<path stroke="#FFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.805" d="M4.512 7.272l2.31 2.475 3.466-4.332"/>
-</g>
+
 </g>
 </g>
 </svg>
