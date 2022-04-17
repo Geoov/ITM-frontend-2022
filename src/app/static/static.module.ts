@@ -17,6 +17,7 @@ import {RouterModule} from '@angular/router';
 import { DashboardComponent } from './dashboard/page/dashboard/dashboard.component';
 import { CompanyDetailsComponent } from './dashboard/components/company-details/company-details.component';
 import { UserDetailsComponent } from './dashboard/components/user-details/user-details.component';
+import { JobPostComponent } from './job-post/job-post.component';
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import { UserDetailsComponent } from './dashboard/components/user-details/user-d
     LoginComponent,
     DashboardComponent,
     CompanyDetailsComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    JobPostComponent
 ]
 })
 
