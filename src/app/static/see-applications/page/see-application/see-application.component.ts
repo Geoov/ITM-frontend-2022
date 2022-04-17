@@ -18,6 +18,7 @@ export class SeeApplicationComponent implements OnInit {
     applications: Aplications[] = [];
     jobs: Jobs[] = [];
     company: CompanyDetails = {};
+    candidateId: number = -1;
 
     constructor(private router: Router,
         private applicationsService: ApplicationService,
@@ -29,14 +30,20 @@ export class SeeApplicationComponent implements OnInit {
         this.authService.decode().subscribe((data: any) => {
             console.log(data);
             if (data.id_user) {
-                this.applicationsService.getApplicationsByCompanyId(data.id_user).subscribe((jobApplications: Aplications) => {
-                    console.log(jobApplications);
+                this.applicationsService.getApplicationsByCompanyId(data.id_user).subscribe((jobApplications: Aplications[]) => {
+                    let jobApplicationsArray = Object.keys(jobApplications).map(key => {
+                        return data[key];
+                    });
+                    console.log(jobApplicationsArray);
+                    // jobApplicationsArray.each((jobApplication: any)  => {
 
+                    // });
                     // jobApplications.each((jobApplication: any) => {
                     //     this.jobsService.getJobById(jobApplication.id).subscribe((tempJob: Jobs) => {
                     //         this.jobs = [...this.jobs, tempJob];
                     //     })
                     // })
+
                 })
             }
 
@@ -48,6 +55,10 @@ export class SeeApplicationComponent implements OnInit {
 
         })
 
+    }
+
+    goToProfile(candidateId: number): void {
+        this.router.navigate(['see-candidate'], { state: { candidateId: candidateId } })
     }
 
 }

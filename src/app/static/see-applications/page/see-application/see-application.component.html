@@ -11,7 +11,7 @@
             <mat-card-header> Job: </mat-card-header>
             <mat-divider></mat-divider>
             <mat-card-content> Persoana: </mat-card-content>
-            <a routerLink="[/see-candidate]">Vezi profilul:</a>
+            <a (click)="goToProfile(this.candidateId)">Vezi profilul:</a>
           </mat-card>
         </ng-template>
       </ng-template>
