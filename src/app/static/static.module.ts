@@ -19,6 +19,8 @@ import { CompanyDetailsComponent } from './dashboard/components/company-details/
 import { UserDetailsComponent } from './dashboard/components/user-details/user-details.component';
 import { JobPostComponent } from './job-post/job-post.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { SeeApplicationComponent } from './see-applications/page/see-application/see-application.component';
+import { SeeCandidateComponent } from './see-applications/components/see-candidate/see-candidate.component';
 
 @NgModule({
   imports: [
@@ -45,6 +47,8 @@ import { MatDividerModule } from '@angular/material/divider';
     CompanyDetailsComponent,
     UserDetailsComponent,
     JobPostComponent,
+    SeeApplicationComponent,
+    SeeCandidateComponent,
 ]
 
 })

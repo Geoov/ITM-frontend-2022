@@ -17,16 +17,29 @@
         <li><a href="#">HOW IT WORKS</a></li>
         <li><a href="#">FREQUENT QUESTIONS</a></li>
         <li *ngIf="this.isLoggedIn">
-            <a routerLink="/dashboard" routerLinkActive="active">DASHBOARD</a>
-          </li>
-        <li *ngIf="this.role===1">
+          <a routerLink="/dashboard" routerLinkActive="active">DASHBOARD</a>
+        </li>
+        <li *ngIf="this.role === 1">
           <a routerLink="/apply-now" routerLinkActive="active">APPLY NOW</a>
+        </li>
+        <li *ngIf="this.role === 2">
+          <a routerLink="/job-post" routerLinkActive="active">POST A JOB</a>
+        </li>
+        <li *ngIf="this.role === 2">
+          <a routerLink="/applications" routerLinkActive="active"
+            >SEE APPLICATIONS</a
+          >
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
           <ng-template [ngIf]="!this.isLoggedIn">
-            <button mat-raised-button color="orange" class="mx-4" (click)="goToRegister()">
+            <button
+              mat-raised-button
+              color="orange"
+              class="mx-4"
+              (click)="goToRegister()"
+            >
               Register
             </button>
           </ng-template>

@@ -56,14 +56,11 @@ export class ApplyNowComponent implements OnInit {
         // })
 
         this.jobService.getMatchedJobs().subscribe((matchedJobs: any) => {
-            // console.log(matchedJobs);
 
             for (let idJob of Object.keys(matchedJobs)) {
                 var procent = matchedJobs[idJob];
-                // console.log(idJob, procent);
                 let jobId: number = +idJob;
                 this.jobService.getJobById(jobId).subscribe((job: any) => {
-                    // console.log('job', job);
                     let tempJob = job;
                     tempJob['procent'] = procent;
                     this.jobs = [...this.jobs, tempJob];

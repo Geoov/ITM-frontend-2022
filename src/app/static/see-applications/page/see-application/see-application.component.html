@@ -1,0 +1,24 @@
+<div id="boxed-container">
+  <header id="header" class="header">
+    <app-header></app-header>
+  </header>
+
+  <div class="section-wrapper">
+    <div class="applications-wrapper">
+      <ng-template [ngIf]="this.applications">
+        <ng-template ngFor let-job [ngForOf]="this.applications" let-i="index">
+          <mat-card class="p-4">
+            <mat-card-header> Job: </mat-card-header>
+            <mat-divider></mat-divider>
+            <mat-card-content> Persoana: </mat-card-content>
+            <a routerLink="[/see-candidate]">Vezi profilul:</a>
+          </mat-card>
+        </ng-template>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="footer-wrapper">
+    <app-footer></app-footer>
+  </div>
+</div>

@@ -2,6 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CompanyDetails } from 'src/app/core/models/company-details';
 import { Jobs } from 'src/app/core/models/jobs';
+import { ApplicationService } from 'src/app/core/services/application/application.service';
+import { AuthService } from 'src/app/core/services/authentication/auth.service';
 import { CompanyService } from 'src/app/core/services/company/company.service';
 
 @Component({
@@ -14,12 +16,13 @@ export class JobCardComponent implements OnInit {
     currentCompany: CompanyDetails = {};
 
     constructor(private router: Router,
-        private companyService: CompanyService) { }
+        private companyService: CompanyService,
+        private authService: AuthService,
+        private applicationService: ApplicationService) { }
 
     ngOnInit(): void {
         if (this.currentJob.id_job) {
             this.fetchCompany(this.currentJob.id_job);
-            console.log(this.currentJob);
         }
 
         // if (!Object.keys(this.currentCompany).length){
@@ -41,7 +44,14 @@ export class JobCardComponent implements OnInit {
     fetchCompany(idJob: number): void {
         this.companyService.getCompanyById(this.currentJob.id_job).subscribe((company: CompanyDetails) => {
             this.currentCompany = company;
-            console.log(this.currentCompany);
+        })
+    }
+
+    pressedOnLike(id_job: number): void {
+        this.authService.decode().subscribe((identity: any) => {
+            let id_user = identity.id_user;
+            this.applicationService.submitApplication(id_job, id_user, 1).subscribe((data:any) => {
+            })
         })
     }
 

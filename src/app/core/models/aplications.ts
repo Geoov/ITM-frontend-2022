@@ -3,4 +3,5 @@ export interface Aplications {
     id_job?: number;
     id_user?: number;
     status?: number;
+    like?: number;
 }
