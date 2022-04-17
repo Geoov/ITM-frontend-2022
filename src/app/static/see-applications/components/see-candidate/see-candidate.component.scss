@@ -1,0 +1,62 @@
+@import "~src/assets/styles/_mixins.scss";
+
+main {
+  @include full-row-direction;
+  @include full-width-height;
+  padding: 40px;
+
+  .left-form {
+    @include column-direction;
+    flex-basis: 30%;
+    padding: 2rem 0;
+
+    .mat-form-field {
+      font-size: 24px;
+      width: 69%;
+
+      * {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .right-form {
+    @include column-direction;
+    flex-basis: 70%;
+
+    .user-row {
+      @include row-direction;
+      width: 100%;
+    }
+
+    .user-row-names {
+      .mat-form-field {
+        font-size: 32px;
+        min-width: 48.5%;
+      }
+    }
+
+    .studies-year {
+      .studies {
+        width: 75%;
+      }
+    }
+
+    .job-date {
+        margin-top: 1.7rem;
+
+        .job-description {
+            width: 50%;
+        }
+    }
+
+    .custom-deep-purple-divider {
+        border-top-color: #fff;
+        margin: 1.6rem 0 1.2rem 0;
+        opacity: 0.75;
+        width: 25%;
+        align-self: center;
+    }
+  }
+
+}

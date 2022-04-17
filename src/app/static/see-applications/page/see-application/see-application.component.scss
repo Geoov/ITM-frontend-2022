@@ -1,0 +1,45 @@
+@import "~src/assets/styles/_mixins.scss";
+
+:host {
+  @include full-column-direction;
+  height: 100%;
+}
+
+#boxed-container {
+  @include full-column-direction;
+  height: 100%;
+}
+
+.section-wrapper {
+  @include full-column-direction;
+  align-items: center;
+  margin-top: 20px;
+  padding-bottom: 60px;
+  position: relative;
+  z-index: 1;
+  min-height: 1000px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    margin-top: 2px;
+    // width: calc(100% - 40px);
+    width: 100%;
+    height: 100%;
+    background-color: lighten(#f2ecff, 1);
+    right: 0;
+    border-top-left-radius: 0px;
+    z-index: -1;
+  }
+
+  .applications-wrapper {
+    @include column-direction;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+    padding: 80px;
+    position: relative;
+    z-index: 1;
+  }
+}

@@ -119,6 +119,7 @@
         mat-mini-fab
         color="warn"
         aria-label="icon button with a heart icon"
+        (click)="pressedOnLike(this.currentJob.id_job)"
       >
         <mat-icon>favorite</mat-icon>
       </button>
