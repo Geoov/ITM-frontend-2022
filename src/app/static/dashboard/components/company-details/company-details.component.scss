@@ -1,0 +1,41 @@
+@import "~src/assets/styles/_mixins.scss";
+
+form {
+  @include full-row-direction;
+  @include full-width-height;
+  padding: 40px;
+
+  .left-form {
+    @include column-direction;
+    flex-basis: 30%;
+    padding: 2rem 0;
+
+    .mat-form-field {
+      font-size: 18px;
+      width: 69%;
+
+      * {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  .right-form {
+    @include column-direction;
+    flex-basis: 70%;
+
+    .user-row {
+      @include row-direction;
+      width: 100%;
+    }
+
+    .user-row-names {
+      .mat-form-field {
+        font-size: 32px;
+        min-width: 100%;
+      }
+    }
+
+  }
+
+}
