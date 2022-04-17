@@ -6,6 +6,7 @@ import { HomeComponent } from '../static/home/page/home/home.component';
 import { JobPostComponent } from '../static/job-post/job-post.component';
 import { LoginComponent } from '../static/login/page/login/login.component';
 import { RegisterComponent } from '../static/register/page/register/register.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
     {
@@ -19,7 +20,8 @@ const routes: Routes = [
     },
     {
         path: 'apply-now',
-        component: ApplyNowComponent
+        component: ApplyNowComponent,
+        canActivate: [AuthGuard], data: {role: 'STUDENT_ROLE'}
     },
     {
         path: 'register',
@@ -36,7 +38,8 @@ const routes: Routes = [
     },
     {
         path: 'job-post',
-        component: JobPostComponent
+        component: JobPostComponent,
+        canActivate: [AuthGuard], data: {role: 'COMPANY_ROLE'}
     },
 ];
 

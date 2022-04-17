@@ -6,11 +6,11 @@
   <div class="section-wrapper">
     <section class="details-wrapper">
       <div class="diploma-section">
-        <ng-template [ngIf]="this.role === 2">
+        <ng-template [ngIf]="this.role === 1">
           <app-user-details [idUser]="this.idUser"></app-user-details>
         </ng-template>
 
-        <ng-template [ngIf]="this.role === 1">
+        <ng-template [ngIf]="this.role === 2">
           <app-company-details [idCompany]="this.idUser"></app-company-details>
         </ng-template>
       </div>

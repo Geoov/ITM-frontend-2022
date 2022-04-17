@@ -37,7 +37,8 @@ import { trigger, transition, state, animate, style } from '@angular/animations'
 })
 export class ApplyNowComponent implements OnInit {
 
-    jobs: Jobs[] = [];
+    // jobs: (Jobs & {procent: number})[] = [];
+    jobs: any[] = [];
     currentJob = 0;
     changeState = false;
     finishedDimmed = false;
@@ -54,21 +55,45 @@ export class ApplyNowComponent implements OnInit {
         //     })
         // })
 
-        if (!this.jobs.length) {
-            for (let i = 1; i <= 3; i++) {
-                let tempJob = {
-                    'id_job': i,
-                    'id_company': i,
-                    'payment_level': i,
-                    'requested_skills': 'SQL' + i,
-                    'optional_skills': 'PHP' + i,
-                    'job_level': i,
-                    'description': 'lorem ipsus' + i
-                }
+        this.jobService.getMatchedJobs().subscribe((matchedJobs: any) => {
+            // console.log(matchedJobs);
 
-                this.jobs.push(tempJob);
+            for (let idJob of Object.keys(matchedJobs)) {
+                var procent = matchedJobs[idJob];
+                // console.log(idJob, procent);
+                let jobId: number = +idJob;
+                this.jobService.getJobById(jobId).subscribe((job: any) => {
+                    // console.log('job', job);
+                    let tempJob = job;
+                    tempJob['procent'] = procent;
+                    this.jobs = [...this.jobs, tempJob];
+                })
+                
             }
-        }
+
+            
+            // jobsArray.forEach()
+
+            // jobsArray.forEach((j: Jobs) => {
+            //     this.jobs = [...this.jobs, j];
+            // })
+        })
+
+        // if (!this.jobs.length) {
+        //     for (let i = 1; i <= 3; i++) {
+        //         let tempJob = {
+        //             'id_job': i,
+        //             'id_company': i,
+        //             'payment_level': i,
+        //             'requested_skills': 'SQL' + i,
+        //             'optional_skills': 'PHP' + i,
+        //             'job_level': i,
+        //             'description': 'lorem ipsus' + i
+        //         }
+
+        //         this.jobs.push(tempJob);
+        //     }
+        // }
 
     }
 
@@ -85,7 +110,7 @@ export class ApplyNowComponent implements OnInit {
             } else {
                 this.currentJob = this.jobs.length - 1;
             }
-        }, 1500);
+        }, 500);
         this.finishedDimmed = true;
     }
 
@@ -98,7 +123,7 @@ export class ApplyNowComponent implements OnInit {
             } else {
                 this.currentJob = 0;
             }
-        }, 1500);
+        }, 500);
     }
 
 }
