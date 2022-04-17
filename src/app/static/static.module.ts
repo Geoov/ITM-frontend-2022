@@ -11,37 +11,39 @@ import { RegisterComponent } from './register/page/register/register.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { LoginComponent } from './login/page/login/login.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {ReactiveFormsModule} from '@angular/forms';
-import {RouterModule} from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard/page/dashboard/dashboard.component';
 import { CompanyDetailsComponent } from './dashboard/components/company-details/company-details.component';
 import { UserDetailsComponent } from './dashboard/components/user-details/user-details.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    SharedModule,
-    MatInputModule,
-    MatSelectModule,
-    MatFormFieldModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    RouterModule
-],
-  declarations: [
-    HomeComponent,
-    HeaderPresentationComponent,
-    PartnersComponent,
-    AdvantagesComponent,
-    RegisterComponent,
-    ApplyNowComponent,
-    JobCardComponent,
-    LoginComponent,
-    DashboardComponent,
-    CompanyDetailsComponent,
-    UserDetailsComponent
-]
+    imports: [
+        CommonModule,
+        SharedModule,
+        MatInputModule,
+        MatSelectModule,
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        RouterModule,
+        MatDividerModule
+    ],
+    declarations: [
+        HomeComponent,
+        HeaderPresentationComponent,
+        PartnersComponent,
+        AdvantagesComponent,
+        RegisterComponent,
+        ApplyNowComponent,
+        JobCardComponent,
+        LoginComponent,
+        DashboardComponent,
+        CompanyDetailsComponent,
+        UserDetailsComponent
+    ]
 })
 
 export class StaticModule {
