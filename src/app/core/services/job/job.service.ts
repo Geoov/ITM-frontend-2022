@@ -14,4 +14,12 @@ export class JobService {
     getJobs(): Observable<Jobs[]> {
         return this.httpClient.get<Jobs[]>(`${environment.laravel_api}/getJobs`);
     }
+
+    getJobById(jobId: number): Observable<Jobs> {
+        return this.httpClient.get<Jobs>(`${environment.laravel_api}/jobs/${jobId}`)
+    }
+
+    getMatchedJobs(): any {
+        return this.httpClient.get(`${environment.laravel_api}/match`);
+    }
 }

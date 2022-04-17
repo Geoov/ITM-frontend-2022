@@ -14,7 +14,7 @@ export class AuthService {
 
 
     private static setSession(authResult: any): void {
-        const expiresAt = moment().add(3, 'hours');
+        const expiresAt = moment().add(300, 'hours');
         localStorage.setItem('token', authResult.token);
         localStorage.setItem('expires_at', JSON.stringify(expiresAt.valueOf()));
     }

@@ -12,7 +12,7 @@ export class CompanyService {
     constructor(private httpClient: HttpClient) { }
 
     getCompanyById(companyId: number): Observable<CompanyDetails> {
-        return this.httpClient.get<CompanyDetails>(`${environment.laravel_api}/com/${companyId}`);
+        return this.httpClient.get<CompanyDetails>(`${environment.laravel_api}/compdetails/${companyId}`);
     }
 }
 

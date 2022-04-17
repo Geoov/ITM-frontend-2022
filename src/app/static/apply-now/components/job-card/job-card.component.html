@@ -122,14 +122,7 @@
       >
         <mat-icon>favorite</mat-icon>
       </button>
-      <button
-        mat-mini-fab
-        color="accent"
-        aria-label="icon button with a plus one icon"
-        class="my-3"
-      >
-        <mat-icon>plus_one</mat-icon>
-      </button>
+      <span class="my-4"></span>
       <button
         mat-mini-fab
         color="primary"
@@ -153,5 +146,6 @@
           : ""
       }}</div>
     </div>
+    <p class="mb-0">{{this.currentJob.procent ? 'Matching: ' + this.currentJob.procent * 100 + ' %' : '?' }}</p>
   </div>
 </mat-card>

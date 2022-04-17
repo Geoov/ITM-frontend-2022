@@ -40,7 +40,8 @@
               type="text"
               formControlName="prenume"
               matInput
-              placeholder="Doe"
+              placeholder="John"
+              [value]="this.user.prenume"
             />
           </mat-form-field>
           <div class="divider px-3"></div>
@@ -50,7 +51,7 @@
               type="text"
               formControlName="nume"
               matInput
-              placeholder="John"
+              placeholder="Doe"
             />
           </mat-form-field>
         </div>
@@ -60,7 +61,7 @@
           class="mt-2 short-description-textarea"
         >
           <mat-label>Insert a short description about you</mat-label>
-          <textarea matInput rows="4"  formControlName="description"></textarea>
+          <textarea matInput rows="4" formControlName="description"></textarea>
         </mat-form-field>
 
         <mat-divider class="custom-deep-purple-divider"></mat-divider>
