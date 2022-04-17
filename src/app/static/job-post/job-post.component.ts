@@ -47,5 +47,14 @@ export class JobPostComponent implements OnInit {
   fetchData() : void {
 
   }
+  onSubmit(): void {
+    // const { email, password, role } = this.firstFormGroup.value;
+    console.log(this.firstFormGroup.value);
+    console.log(this.secondFormGroup.value);
 
+    // this.authService.register(email, password,role).subscribe((resp: any) => {
+    //   // console.log(resp);
+    // this.router.navigate(['/login']);
+  };
+    
 }

@@ -6,7 +6,7 @@
     <!-- <div class="section-wrapper" [ngIf]="this.role === 2" > -->
       <section class="px-5 py-5 details-wrapper">
           <mat-stepper orientation="horizontal" [linear]="isLinear" #stepper>
-            <mat-step [stepControl]="firstFormGroup">
+            <mat-step [stepControl]="firstFormGroup" (ngSubmit)="onSubmit()">
               <form [formGroup]="firstFormGroup" class="d-flex flex-row justify-content-between align-items-center w-100">
                 <ng-template matStepLabel>Fill out Intership description</ng-template>
                 <mat-form-field class="example-full-width" appearance="fill">
@@ -20,15 +20,65 @@
                 </div>
               </form>
             </mat-step>
-            <mat-step [stepControl]="secondFormGroup">
-              <form [formGroup]="secondFormGroup">
+            <mat-step [stepControl]="secondFormGroup" (ngSubmit)="onSubmit()">
+              <form [formGroup]="secondFormGroup" class="example-full-width">
                 <ng-template matStepLabel>Fill out Intership Policy</ng-template>
-                <mat-form-field appearance="fill">
-                  <mat-label>Technologies</mat-label>
+                <div class="tech">
+                  <h1>Tech Stack Requirements</h1>
+                <mat-form-field appearance="fill" class="mx-5">
+                  <mat-label>Mandatory Technologies</mat-label>
                   <input matInput formControlName="secondCtrl" placeholder="PHP, Laravel, Angular, Mysql"
                          required>
                 </mat-form-field>
-                <div>
+                <mat-form-field  appearance="fill" class="mx-5">
+                    <mat-label>Optional Technologies</mat-label>
+                    <input matInput formControlName="secondCtrl" placeholder="PHP, Laravel, Angular, Mysql"
+                           required>
+                  </mat-form-field>
+                </div>
+                <div class="row-option">
+                  <h1>Experience Level</h1>
+                    <mat-radio-group class="example-ducks" formControlName="secondCtrl" matInput aria-label="Select expected experience level">
+                        <div class="column">
+                            <div class="col-auto mr-sm-2 mx-5 card-block py-1 radio selected ">
+                                    <div class="col">
+                                        <div class="pic my-2"> <img class="irc_mut img-fluid" src="assets/images/duck-rubber.svg"
+                                            [width]="30"
+                                            [height]="30"> </div>
+                                        <mat-radio-button value="1"> Rubber Duck
+                                        </mat-radio-button>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="col-auto ml-sm-2 mx-5 card-block py-1 radio ">
+                                    <div class="col">
+                                        <div class="pic my-2"> <img class="irc_mut img-fluid" src="assets/images/duck-thug.svg"
+                  [width]="30"
+                  [height]="30"> </div>
+                                        <mat-radio-button value="2"> Intermediate  Duck
+                                        </mat-radio-button>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="col-auto ml-sm-2 mx-5 card-block py-1 radio ">
+                                    <div class="col">
+                                        <div class="pic my-2"> <img class="irc_mut img-fluid" src="assets/images/duck-vader.svg"
+                                            [width]="30"
+                                            [height]="30"> </div>
+                                        <mat-radio-button value="2"> Duck Vader
+                                        </mat-radio-button>
+                                    </div>
+                            </div>
+                        </div>
+                    </mat-radio-group>
+                    <div class="slider">
+                    <mat-label>Monetary Benefits</mat-label>
+                    <mat-slider min="1" max="3" step="1" value="1"></mat-slider>
+                  </div>
+                </div>
+                <div style="margin-top: 50px;">
                   <button mat-button matStepperPrevious>Back</button>
                   <button mat-button matStepperNext>Next</button>
                 </div>
@@ -39,7 +89,7 @@
               <p>You are now done.</p>
               <div>
                 <button mat-button matStepperPrevious>Back</button>
-                <button mat-button (click)="stepper.reset()">Reset</button>
+                <button mat-button >Submit</button>
               </div>
             </mat-step>
           </mat-stepper>
