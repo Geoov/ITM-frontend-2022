@@ -1,0 +1,15 @@
+@import "~src/assets/styles/_mixins.scss";
+
+form {
+  @include full-column-direction;
+  @include full-width-height;
+
+  .user-row {
+    @include full-row-direction;
+    width: 100%;
+
+    .form-control {
+      @include full-row-direction;
+    }
+  }
+}

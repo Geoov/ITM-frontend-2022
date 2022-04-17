@@ -1,38 +1,37 @@
 @mixin reset-margins-paddings {
-    margin: 0;
-    padding: 0;
-  }
-  
-  @mixin row-direction {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  @mixin column-direction {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  @mixin full-row-direction {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
+  margin: 0;
+  padding: 0;
+}
 
-  @mixin full-column-direction {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-  }
-  
-  @mixin reset-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
+@mixin row-direction {
+  display: flex;
+  flex-direction: row;
+}
 
-  @mixin full-width-height {
-      width: 100%;
-      height: 100%;
-  }
-  
+@mixin column-direction {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin full-row-direction {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+@mixin full-column-direction {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+@mixin reset-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@mixin full-width-height {
+  width: 100%;
+  height: 100%;
+}

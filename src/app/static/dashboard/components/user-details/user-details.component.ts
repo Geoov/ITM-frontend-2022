@@ -14,14 +14,16 @@ export class UserDetailsComponent implements OnInit {
     @Input() idUser: number = -1;
     user: UserDetails = {};
     userDetailsForm = new FormGroup({
-        email: new FormControl('', [
-            Validators.required,
-            Validators.email,
-        ]),
-        password: new FormControl('', [
-            Validators.required,
-            Validators.minLength(4)
-        ])
+       prenume: new FormControl(),
+       nume: new FormControl(),
+       varsta: new FormControl(),
+       nr_tel: new FormControl(),
+       studii_curente: new FormControl(),
+       an: new FormControl(),
+       last_job: new FormControl(),
+       end_date: new FormControl(),
+       start_date: new FormControl(),
+       skiils: new FormControl()
     });
     
     constructor(
