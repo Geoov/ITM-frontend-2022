@@ -15,10 +15,26 @@ export class AuthGuard implements CanActivate {
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
         if (this.authService.isLoggedIn()) {
-            const currentUser = this.authService.decode();
-            console.log(currentUser);
-           
+
+            return new Observable<boolean>((observer) => {
+                this.authService.decode().toPromise().then((data: any) => {
+                    if ((data.role === 1 && route.data['role'] === 'STUDENT_ROLE')
+                        || (data.role === 2 && route.data['role'] === 'COMPANY_ROLE')) {
+                        observer.next(true);
+                        observer.complete();
+                    } else {
+                        observer.next(false);
+                        observer.complete();
+                    }
+                })
+            });
+            
+        } else {
+            this.authService.logout();
+            this.router.navigate(['/home']);
+            return false;
         }
+        return false;
     }
 }
 
