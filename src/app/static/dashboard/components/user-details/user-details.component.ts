@@ -62,29 +62,22 @@ export class UserDetailsComponent implements OnInit {
     }
 
     onSubmit(): void {
-        console.log(this.userDetailsForm.value);
+     
 
-        let prenume = 'john';
-        let nume = 'doe';
-        let varsta = 11;
-        let nr_tel = '0x8';
-        let studii_curente = 'studii';
-        let an = 2020;
-        let last_job = 'last_kpb';
-        let end_date = moment().format(moment.HTML5_FMT.DATE);
-        let start_date = moment().format(moment.HTML5_FMT.DATE);
-        let skills = 'ng';
-        let description = 'desc';
+        let {prenume, nume,varsta, nr_tel, studii_curente, an, last_job, end_date, start_date, skills, description} = this.userDetailsForm.value;
+    
+        end_date = moment(end_date).format(moment.HTML5_FMT.DATE);
+        start_date = moment(start_date).format(moment.HTML5_FMT.DATE);
+ 
         let id_user = this.idUser;
-        console.log(id_user);
 
 
         if (this.emptyObject) {
             console.log('create');
             // create
-            // this.userService.insertUserDetails(id_user, prenume, nume, varsta, nr_tel, studii_curente, an, last_job, end_date, start_date, skills, description).subscribe((data) => {
-            //     // console.log(data);
-            // })
+            this.userService.insertUserDetails(id_user, prenume, nume, varsta, nr_tel, studii_curente, an, last_job, end_date, start_date, skills, description).subscribe((data) => {
+                // console.log(data);
+            })
         } else {
             console.log('noncreate');
             // update
