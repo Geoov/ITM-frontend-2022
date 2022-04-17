@@ -17,6 +17,7 @@
               formControlName="varsta"
               matInput
               placeholder="18"
+              [value]="this.user.varsta"
             />
           </mat-form-field>
 
@@ -27,6 +28,7 @@
               formControlName="nr_tel"
               matInput
               placeholder="+40771771017"
+              
             />
           </mat-form-field>
         </div>
@@ -52,6 +54,7 @@
               formControlName="nume"
               matInput
               placeholder="Doe"
+              [value]="this.user.nume"
             />
           </mat-form-field>
         </div>
@@ -61,7 +64,7 @@
           class="mt-2 short-description-textarea"
         >
           <mat-label>Insert a short description about you</mat-label>
-          <textarea matInput rows="4" formControlName="description"></textarea>
+          <textarea matInput rows="4" formControlName="description" ></textarea>
         </mat-form-field>
 
         <mat-divider class="custom-deep-purple-divider"></mat-divider>
@@ -74,6 +77,8 @@
               formControlName="studii_curente"
               matInput
               placeholder="Example: I am studying IT at AC"
+              [value]="this.user.studii_curente"
+
             />
           </mat-form-field>
           <div class="divider px-3"></div>
@@ -84,6 +89,8 @@
               formControlName="an"
               matInput
               placeholder="1"
+              [value]="this.user.an"
+
             />
           </mat-form-field>
         </div>
@@ -98,6 +105,7 @@
               formControlName="last_job"
               matInput
               placeholder="Example: Intern at Google"
+              [value]="this.user.last_job"
             />
           </mat-form-field>
 
@@ -110,6 +118,7 @@
               formControlName="end_date"
               matInput
               placeholder="yyyy-mm-dd"
+              [value]="this.user.end_date"
             />
           </mat-form-field>
 
@@ -122,6 +131,8 @@
               formControlName="start_date"
               matInput
               placeholder="yyyy-mm-dd"
+              [value]="this.user.start_date"
+
             />
           </mat-form-field>
         </div>
@@ -136,6 +147,8 @@
           formControlName="skills"
           matInput
           placeholder="Examples: Angular, Laravel, Spring"
+          [value]="this.user.skills"
+
         />
       </mat-form-field>
 

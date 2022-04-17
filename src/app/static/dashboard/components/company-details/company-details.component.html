@@ -17,6 +17,7 @@
               formControlName="an_start"
               matInput
               placeholder="2000"
+              [value]="this.company.an_start"
             />
           </mat-form-field>
           <mat-form-field appearance="legacy">
@@ -24,6 +25,7 @@
             <input
               type="number"
               formControlName="nr_angajati"
+              [value]="this.company.nr_angajati"
               matInput
               placeholder="12"
             />
@@ -38,6 +40,8 @@
             <input
               type="text"
               formControlName="company_name"
+              [value]="this.company.company_name"
+
               matInput
               placeholder="Google"
             />
@@ -49,7 +53,7 @@
           class="mt-2 short-description-textarea"
         >
           <mat-label>Insert a short description about this company</mat-label>
-          <textarea matInput rows="4" formControlName="descriere"></textarea>
+          <textarea matInput rows="4" formControlName="descriere" [value]="this.company.descriere"></textarea>
         </mat-form-field>
 
         <mat-form-field class="w-100">
@@ -58,6 +62,7 @@
             type="text"
             formControlName="tehnologii"
             matInput
+            [value]="this.company.descriere">
             placeholder="Examples: Angular, Laravel, Spring"
           />
         </mat-form-field>
